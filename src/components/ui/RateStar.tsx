@@ -5,10 +5,10 @@ const Rating = ({ totalRate }: any) => {
 
   const getStarColor = (rating: number) => {
     if (rating === 5) return "text-green-600";
-    if (rating === 4) return "text-green-500";
-    if (rating === 3) return "text-yellow-500";
-    if (rating === 2) return "text-orange-500";
-    if (rating === 1) return "text-red-500";
+    if (rating >= 4) return "text-green-500";
+    if (rating >= 3) return "text-yellow-500";
+    if (rating >= 2) return "text-orange-500";
+    if (rating >= 1) return "text-red-500";
     return "text-gray-300";
   };
 
@@ -17,7 +17,7 @@ const Rating = ({ totalRate }: any) => {
       <div className="flex items-center gap-1 text-[1.1rem]">
         {totalRate > 0 && (
           <>
-            <div>{totalRate}</div>
+            <div>{totalRate.toFixed(1)}</div>
             <div className="flex items-center">
               {[...Array(maxStars)].map((_, index) => {
                 const starRating = index + 1;

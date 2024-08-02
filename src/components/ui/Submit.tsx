@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa6";
 import toast, { Toaster } from "react-hot-toast";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "@/lib/store";
 import { fetchComment } from "@/lib/features/commentSlice";
 
@@ -21,7 +21,7 @@ function Submit() {
   const [nowDate, setNowDate] = useState(new Date().toLocaleString());
   const [comment, setComment] = useState("");
   const [selectedValue, setSelectedValue] = useState("5");
-  const [userEmail, setUserEmail] = useState<String | null | undefined>();
+  const [userId, setUserId] = useState<String | null | undefined>();
   const [isFormValid, setIsFormValid] = useState(false);
 
   async function userInfo() {
@@ -32,7 +32,7 @@ function Submit() {
     }
 
     if (user && user?.user) {
-      setUserEmail(user?.user?.email);
+      setUserId(user?.user?.id);
     }
   }
 
@@ -45,15 +45,25 @@ function Submit() {
   }, [comment, selectedValue]);
 
   const notify = () => toast("Yorumunuz başarıyla paylaşıldı!");
+  const rateLimitNotify = () => toast("Daha fazla yorum yapamazsınız!");
 
   const dispatch = useDispatch<AppDispatch>();
+
+  const focusComment = useSelector((item: any) => item.comment.data);
+  const filter = focusComment?.filter((item: any) => (item.user_id === userId ? item : null));
 
   async function commentInsert(e: any) {
     e.preventDefault();
     if (!isFormValid) return;
 
+    if (filter?.length === 3) {
+      rateLimitNotify();
+      setComment("");
+      return;
+    }
+
     const request = {
-      user_email: userEmail,
+      user_id: userId,
       university_id: pathId,
       comment: comment,
       created_at: nowDate,
