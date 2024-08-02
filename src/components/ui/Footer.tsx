@@ -16,9 +16,6 @@ function Footer() {
         </div>
         <div className="pt-[3rem] flex items-center justify-start gap-16 text-gray-600 text-[0.9rem] dark:text-gray-400">
           <div className="cursor-pointer hover:text-gray-950 dark:hover:text-gray-100 transition-all">
-            <Link href={"/"}>İletişim</Link>
-          </div>
-          <div className="cursor-pointer hover:text-gray-950 dark:hover:text-gray-100 transition-all">
             <Link href={"/privacy"}>Gizlilik</Link>
           </div>
           <div className="cursor-pointer hover:text-gray-950 dark:hover:text-gray-100 transition-all">

@@ -11,6 +11,7 @@ import Submit from "@/components/ui/Submit";
 import { createClient } from "@/utils/client";
 import { fetchComment } from "@/lib/features/commentSlice";
 import { AppDispatch } from "@/lib/store";
+import { Spinner } from "@radix-ui/themes";
 
 const University = () => {
   const path = usePathname();
@@ -62,7 +63,9 @@ const University = () => {
   return (
     <div className="w-full h-full flex-col items-center justify-start dark:bg-slate-950">
       {focusUniversity.length === 0 ? (
-        <div className="w-full flex items-center justify-center h-[32rem] text-[1.1rem]">Yükleniyor...</div>
+        <div className="w-full flex items-center justify-center h-[32rem] text-[1.1rem]">
+          <Spinner size="3" />
+        </div>
       ) : null}
       {focusUniversity && focusUniversity.length > 0
         ? focusUniversity.map((item: any) => (

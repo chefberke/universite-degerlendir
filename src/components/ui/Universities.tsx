@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { FaStar } from "react-icons/fa6";
 
 import RateStar from "./RateStar";
 
@@ -10,6 +9,7 @@ import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "@/lib/store";
 import { fetchAllComment } from "@/lib/features/commentSlice";
+import { Spinner } from "@radix-ui/themes";
 
 interface UniversityList {
   id: number;
@@ -68,7 +68,12 @@ const Universities = () => {
               </div>
               <div className="pt-1 text-[0.9rem] text-gray-800 dark:text-gray-200">Daha fazla...</div>
               <div className="pt-6 flex items-center w-full justify-between dark:text-gray-100">
-                {Comments.loading === true ? <div>Yükleniyor...</div> : null}
+                {Comments.loading === true ? (
+                  <div>
+                    {" "}
+                    <Spinner size="3" />{" "}
+                  </div>
+                ) : null}
                 <div>
                   <RateStar totalRate={totalRate} />
                 </div>

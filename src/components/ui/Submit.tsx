@@ -10,6 +10,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "@/lib/store";
 import { fetchComment } from "@/lib/features/commentSlice";
 
+import Filter from "bad-words";
+import { turkishBlockedWordsList } from "@/utils/bloackedWords";
+
 function Submit() {
   const supabase = createClient();
 
@@ -46,15 +49,24 @@ function Submit() {
 
   const notify = () => toast("Yorumunuz başarıyla paylaşıldı!");
   const rateLimitNotify = () => toast("Daha fazla yorum yapamazsınız!");
+  const blockedWords = () => toast("Yorumunuz argo içeriyor!");
 
   const dispatch = useDispatch<AppDispatch>();
 
   const focusComment = useSelector((item: any) => item.comment.data);
   const filter = focusComment?.filter((item: any) => (item.user_id === userId ? item : null));
 
+  const filteredComment = new Filter();
+  filteredComment.addWords(...turkishBlockedWordsList);
+
   async function commentInsert(e: any) {
     e.preventDefault();
     if (!isFormValid) return;
+
+    if (filteredComment.isProfane(comment)) {
+      blockedWords();
+      return;
+    }
 
     if (filter?.length === 3) {
       rateLimitNotify();

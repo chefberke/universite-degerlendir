@@ -86,7 +86,7 @@ function Navbar() {
     <div className="w-full h-[6rem] flex items-center justify-between">
       <div className="flex items-center gap-2">
         <Logo />
-        <h1 className="text-[1.2rem] font-medium dark:text-white text-gray-950 max-sm:text-[1.1rem]">
+        <h1 className="text-[1.2rem] font-medium dark:text-white text-gray-950 max-sm:text-[1rem]">
           Izmir Universities Rate
         </h1>
       </div>
