@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
+import "@radix-ui/themes/styles.css";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import StoreProvider from "./StoreProvider";
+import { Theme } from "@radix-ui/themes";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +25,9 @@ export default function RootLayout({
               <div>
                 <Navbar />
               </div>
-              <div>{children}</div>
+              <div>
+                <Theme>{children}</Theme>
+              </div>
               <div>
                 <Footer />
               </div>

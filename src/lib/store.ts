@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import universitySlice from './universitySlice'
+import universitySlice from './features/universitySlice'
 
 export const makeStore = () => {
   return configureStore({

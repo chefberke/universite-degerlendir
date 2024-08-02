@@ -1,18 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-import Egelogo from "../../public/assets/ege_university_logo.png";
-import Deulogo from "../../public/assets/deu_logo.png";
-import İytelogo from "../../public/assets/iyte_logo.png";
-import İkclogo from "../../public/assets/ikc_logo.png";
-import Bulogo from "../../public/assets/bu_logo.png";
-import İdulogo from "../../public/assets/idu_logo.png";
-import Havyologo from "../../public/assets/havyo_logo.png";
-import Sbulogo from "../../public/assets/sbu_logo.png";
-import İeulogo from "../../public/assets/ieu_logo.png";
-import İkyologo from "../../public/assets/ikmyo_logo.png";
-import Yasarlogo from "../../public/assets/yu_logo.png";
-import Thklogo from "../../public/assets/thku_logo.png";
-import İtulogo from "../../public/assets/tu_logo.png";
+import Egelogo from "../../../public/assets/ege_university_logo.png";
+import Deulogo from "../../../public/assets/deu_logo.png";
+import İytelogo from "../../../public/assets/iyte_logo.png";
+import İkclogo from "../../../public/assets/ikc_logo.png";
+import Bulogo from "../../../public/assets/bu_logo.png";
+import İdulogo from "../../../public/assets/idu_logo.png";
+import Havyologo from "../../../public/assets/havyo_logo.png";
+import Sbulogo from "../../../public/assets/sbu_logo.png";
+import İeulogo from "../../../public/assets/ieu_logo.png";
+import İkyologo from "../../../public/assets/ikmyo_logo.png";
+import Yasarlogo from "../../../public/assets/yu_logo.png";
+import Thklogo from "../../../public/assets/thku_logo.png";
+import İtulogo from "../../../public/assets/tu_logo.png";
 
 
 const initialState = {
@@ -125,7 +125,7 @@ const initialState = {
   
 }
 
-export const counterSlice = createSlice({
+export const universitySlice = createSlice({
   name: 'university',
   initialState,
   reducers: {
@@ -133,7 +133,7 @@ export const counterSlice = createSlice({
   },
 })
 
-export const {  } = counterSlice.actions
+export const {  } = universitySlice.actions
 
 
-export default counterSlice.reducer
+export default universitySlice.reducer
