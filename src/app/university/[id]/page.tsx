@@ -30,8 +30,6 @@ const University = () => {
     dispatch(fetchComment(pathId));
   }, []);
 
-  console.log("comments", commentsState);
-
   useEffect(() => {
     const universityUrl = state.filter((item: any) => (item.id.toString() === pathId.toString() ? item : null));
 
@@ -62,7 +60,7 @@ const University = () => {
   }, []);
 
   return (
-    <div className="w-full h-full flex-col items-center justify-start">
+    <div className="w-full h-full flex-col items-center justify-start dark:bg-slate-950">
       {focusUniversity.length === 0 ? (
         <div className="w-full flex items-center justify-center h-[32rem] text-[1.1rem]">Yükleniyor...</div>
       ) : null}
@@ -85,7 +83,7 @@ const University = () => {
           ))
         : null}
       <div className="flex-col items-center justify-center">
-        <Rate />
+        <Rate universityId={pathId} />
         <div className="h-[18rem] flex items-center w-full">
           {isUserLogin ? (
             <Submit />

@@ -6,6 +6,9 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa6";
 import toast, { Toaster } from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/lib/store";
+import { fetchComment } from "@/lib/features/commentSlice";
 
 function Submit() {
   const supabase = createClient();
@@ -38,15 +41,16 @@ function Submit() {
   }, []);
 
   useEffect(() => {
-    // Check if both comment and selectedValue are valid
     setIsFormValid(comment.trim() !== "" && selectedValue !== "");
   }, [comment, selectedValue]);
 
   const notify = () => toast("Yorumunuz başarıyla paylaşıldı!");
 
+  const dispatch = useDispatch<AppDispatch>();
+
   async function commentInsert(e: any) {
     e.preventDefault();
-    if (!isFormValid) return; // Prevent submission if the form is invalid
+    if (!isFormValid) return;
 
     const request = {
       user_email: userEmail,
@@ -64,6 +68,7 @@ function Submit() {
     }
 
     notify();
+    dispatch(fetchComment(pathId));
 
     setComment("");
     setSelectedValue("5");
