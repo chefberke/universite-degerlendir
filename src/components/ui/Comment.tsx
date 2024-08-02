@@ -97,19 +97,17 @@ function Comments({ universityId }: any) {
 
   const state = useSelector((item: any) => item.comment);
 
-  console.log(state);
-
   return state.data && state.data.length > 0
     ? state.data.map((item: any) => (
-        <div key={item.id} className="w-full h-full flex items-center mt-4 pb-12 border-t pt-12">
+        <div key={item.id} className="w-full h-full flex items-center mt-4 pb-12 border-t pt-12 dark:border-t-gray-600">
           <div className="flex-col items-center w-full">
             <div className="flex items-center justify-between w-full max-md:flex-col max-md:justify-start max-md:items-start">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3">
                 <div>
                   <Image src={userImage[item.image].image.src} width={50} height={50} alt="userImg" />
                 </div>
                 <div className="font-medium">@Anonim</div>
-                <div className="text-gray-500">{item.created_at}</div>
+                <div className="text-gray-500 dark:text-gray-300">{item.created_at}</div>
               </div>
               <div className="flex items-center gap-3 max-md:flex-col max-md:items-start max-md:mt-4">
                 <RateStar totalRate={item.rate} />

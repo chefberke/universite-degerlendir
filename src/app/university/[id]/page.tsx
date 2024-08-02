@@ -84,11 +84,11 @@ const University = () => {
         : null}
       <div className="flex-col items-center justify-center">
         <Rate universityId={pathId} />
-        <div className="h-[18rem] flex items-center w-full">
+        <div className="flex items-center w-full">
           {isUserLogin ? (
             <Submit />
           ) : (
-            <div className="text-[1.2rem] font-medium">Yorumunu hemen paylaşmak için giriş yap!</div>
+            <div className="text-[1.2rem] font-medium mt-16">Yorumunu hemen paylaşmak için giriş yap!</div>
           )}
         </div>
         <div className="dark:text-white mt-3 pt-12">

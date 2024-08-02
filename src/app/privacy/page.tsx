@@ -2,14 +2,14 @@ import React from "react";
 
 function page() {
   return (
-    <div className="w-full h-full flex items-center justify-start mt-[6rem]">
+    <div className="w-full h-full flex items-center justify-start mt-[6rem] dark:bg-slate-950">
       <div className="flex-col items-center justify-center">
         <div>
           <h2 className="font-medium text-[1.6rem] dark:text-white">Gizlilik Politikası</h2>
           <p className="text-gray-500 text-[0.9rem] dark:text-gray-300">Son Güncelleme: 31 Temmuz 2024</p>
         </div>
         <div className="pt-6">
-          <p className="text-[1rem] dark:text-gray-100">
+          <p className="text-[1rem] dark:text-gray-100 font-medium">
             Izmir Üniversiteleri Puanlama uygulaması olarak, gizliliğinize değer veriyoruz. İşte bilgilerinizi nasıl
             işlediğimiz:
           </p>
