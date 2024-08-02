@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import universitySlice from './features/universitySlice'
+import commentSlice from './features/commentSlice'
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      university : universitySlice
+      university : universitySlice,
+      comment: commentSlice
     },
   })
 }

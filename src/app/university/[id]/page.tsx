@@ -2,11 +2,15 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
 import Comments from "@/components/ui/Comment";
 import Rate from "@/components/ui/Rate";
 import Submit from "@/components/ui/Submit";
+
+import { createClient } from "@/utils/client";
+import { fetchComment } from "@/lib/features/commentSlice";
+import { AppDispatch } from "@/lib/store";
 
 const University = () => {
   const path = usePathname();
@@ -15,8 +19,18 @@ const University = () => {
   const pathId = path.slice(pathLastIndex + 1);
 
   const [focusUniversity, setFocusUniversity] = useState([]);
+  const [isUserLogin, isUserSetLogin] = useState(false);
 
   const state = useSelector((item: any) => item.university.list);
+
+  const dispatch = useDispatch<AppDispatch>();
+  const commentsState = useSelector((comment: any) => comment.comment);
+
+  useEffect(() => {
+    dispatch(fetchComment(pathId));
+  }, []);
+
+  console.log("comments", commentsState);
 
   useEffect(() => {
     const universityUrl = state.filter((item: any) => (item.id.toString() === pathId.toString() ? item : null));
@@ -26,6 +40,25 @@ const University = () => {
     }
 
     setFocusUniversity(universityUrl);
+  }, []);
+
+  const supabase = createClient();
+
+  async function userInfo() {
+    const { data: user, error } = await supabase.auth.getUser();
+
+    if (error) {
+      console.log("User fetch error");
+      isUserSetLogin(false);
+    }
+
+    if (user && user?.user) {
+      isUserSetLogin(true);
+    }
+  }
+
+  useEffect(() => {
+    userInfo();
   }, []);
 
   return (
@@ -54,7 +87,11 @@ const University = () => {
       <div className="flex-col items-center justify-center">
         <Rate />
         <div className="h-[18rem] flex items-center w-full">
-          <Submit />
+          {isUserLogin ? (
+            <Submit />
+          ) : (
+            <div className="text-[1.2rem] font-medium">Yorumunu hemen paylaşmak için giriş yap!</div>
+          )}
         </div>
         <div className="dark:text-white mt-3 pt-12">{/* <Comments /> */}</div>
       </div>
