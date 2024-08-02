@@ -58,6 +58,7 @@ function Submit() {
       comment: comment,
       created_at: nowDate,
       rate: selectedValue,
+      image: Math.floor(Math.random() * 15),
     };
 
     const { error } = await supabase.from("comment").insert(request);

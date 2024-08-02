@@ -91,7 +91,9 @@ const University = () => {
             <div className="text-[1.2rem] font-medium">Yorumunu hemen paylaşmak için giriş yap!</div>
           )}
         </div>
-        <div className="dark:text-white mt-3 pt-12">{/* <Comments /> */}</div>
+        <div className="dark:text-white mt-3 pt-12">
+          <Comments universityId={pathId} />
+        </div>
       </div>
     </div>
   );

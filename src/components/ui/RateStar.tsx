@@ -24,7 +24,9 @@ const Rating = ({ totalRate }: any) => {
                 return (
                   <FaStar
                     key={index}
-                    className={`text-[1.2rem] ${totalRate >= starRating ? getStarColor(totalRate) : "text-gray-300"}`}
+                    className={`text-[1.2rem] ${
+                      totalRate >= starRating ? getStarColor(totalRate) : "text-gray-300"
+                    } text-[1.2rem] `}
                   />
                 );
               })}

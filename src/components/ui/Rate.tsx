@@ -28,17 +28,17 @@ function Rate({ universityId }: any) {
       <div className="mt-24 text-[1.5rem] dark:text-white font-medium">Değerlendirmeler</div>
       <div className="w-full flex items-center justify-between pt-12 dark:text-gray-200 max-sm:flex-col max-sm:items-start max-sm:justify-start">
         {state?.loading === true ? <div>Yükleniyor...</div> : null}
-        {state?.data?.length === 0 ? <div>Hiç değerlendirme yok.</div> : null}
+
         <div>
           <h2 className="text-gray-500 text-[1.1rem] dark:text-gray-300">Toplam Değerlendirme</h2>
           <div className="text-gray-950 text-[1.4rem] flex justify-center pt-6 font-medium dark:text-white max-sm:justify-start">
-            {state?.data?.length}
+            {state?.data?.length > 0 ? <h2>{state.data.length}</h2> : <h2>0</h2>}
           </div>
         </div>
         <div>
           <h2 className="text-gray-500 text-[1.1rem] dark:text-gray-300 max-sm:mt-12">Ortalama Puan</h2>
           <div className="text-gray-950 text-[1.4rem] flex justify-center pt-6 font-medium dark:text-white max-sm:justify-start">
-            <RateStar totalRate={totalRate} />
+            {state?.data?.length > 0 ? <RateStar totalRate={totalRate} /> : <h2>0</h2>}
           </div>
         </div>
 
