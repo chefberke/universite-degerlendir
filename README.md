@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Üniversite Değerlendir
 
-## Getting Started
+Üniversite Değerlendir, kullanıcıların üniversiteleri anonim olarak değerlendirebileceği ve yorum yapabileceği açık kaynaklı bir uygulamadır. Kullanıcılar uygulamaya giriş yapabilir ve yeni hesaplar oluşturabilirler.
 
-First, run the development server:
+## Özellikler
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Anonim Yorumlar:** Kullanıcılar, kimliklerini açıklamadan üniversiteler hakkında yorum yapabilir.
+- **Derecelendirme:** Üniversitelere puan verebilme imkanı.
+- **Kullanıcı Girişi ve Kayıt:** Kullanıcılar giriş yapabilir ve yeni hesap oluşturabilir.
+- **Kullanıcı Dostu Arayüz:** Basit ve kullanımı kolay arayüz.
+- **Açık Kaynak:** Uygulama tamamen açık kaynak olup, GitHub üzerinden erişilebilir.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Teknolojiler
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js:** Sunucu tarafı işleme ve SEO dostu sayfalar için.
+- **Supabase:** Kimlik doğrulama ve veritabanı yönetimi için.
+- **Node.js:** Sunucu tarafı işlemlerini yönetmek için.
+- **React:** Kullanıcı arayüzü geliştirmek için.
+- **Tailwind CSS:** Uygulamanın stilini oluşturmak için.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Kullanım
 
-## Learn More
+- **Giriş Yapma ve Kayıt:** Ana sayfada giriş yapabilir veya yeni hesap oluşturabilirsiniz.
+- **Üniversite Derecelendirme:** Üniversiteleri seçip puan verebilir ve yorum yapabilirsiniz.
 
-To learn more about Next.js, take a look at the following resources:
+## Katkıda Bulunma
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Katkıda bulunmak isterseniz, pull request gönderebilir veya issue açabilirsiniz.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Lisans
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.
