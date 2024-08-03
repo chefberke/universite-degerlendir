@@ -12,10 +12,10 @@ function Footer() {
             <h2 className="text-[1.4rem] font-medium dark:text-white">Üniversite Değerlendir</h2>
           </div>
           <p className="text-gray-500 text-[0.9rem] w-[40rem] pt-4 max-md:w-[26rem] dark:text-gray-400">
-            Bu platform, İzmir &apos deki üniversiteleri puanlamanıza ve anonim yorum bırakmanıza olanak tanır.
-            Deneyimlerinizi ve görüşlerinizi paylaşarak diğerlerinin eğitimleri hakkında daha bilinçli kararlar
-            vermelerine yardımcı olun. Değerli geri bildirimleri keşfedin ve bilgili öğrenciler ve aday öğrencilerden
-            oluşan bir topluluğa katkıda bulunun.
+            Bu platform, İzmirdeki üniversiteleri puanlamanıza ve anonim yorum bırakmanıza olanak tanır. Deneyimlerinizi
+            ve görüşlerinizi paylaşarak diğerlerinin eğitimleri hakkında daha bilinçli kararlar vermelerine yardımcı
+            olun. Değerli geri bildirimleri keşfedin ve bilgili öğrenciler ve aday öğrencilerden oluşan bir topluluğa
+            katkıda bulunun.
           </p>
         </div>
         <div className="pt-[3rem] flex items-center justify-start gap-16 text-gray-600 text-[0.9rem] dark:text-gray-400">
