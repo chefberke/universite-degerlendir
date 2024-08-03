@@ -6,6 +6,7 @@ import Footer from "@/components/ui/Footer";
 import StoreProvider from "./StoreProvider";
 import { Theme } from "@radix-ui/themes";
 import { Suspense } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Üniversite Değerlendir",
@@ -35,6 +36,7 @@ export default function RootLayout({
               </div>
               <div>
                 <Theme className="dark:bg-slate-950">{children}</Theme>
+                <Analytics />
               </div>
               <div>
                 <Footer />
