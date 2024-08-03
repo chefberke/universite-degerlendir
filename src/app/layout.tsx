@@ -5,6 +5,7 @@ import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import StoreProvider from "./StoreProvider";
 import { Theme } from "@radix-ui/themes";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +24,9 @@ export default function RootLayout({
           <div className="flex items-center justify-center font-poppins">
             <div className="h-screen max-w-[70rem] w-[90%]">
               <div>
-                <Navbar />
+                <Suspense fallback={<div>Loading...</div>}>
+                  <Navbar />
+                </Suspense>
               </div>
               <div>
                 <Theme className="dark:bg-slate-950">{children}</Theme>
