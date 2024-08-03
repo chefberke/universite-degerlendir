@@ -7,11 +7,13 @@ import Image from "next/image";
 import Comments from "@/components/ui/Comment";
 import Rate from "@/components/ui/Rate";
 import Submit from "@/components/ui/Submit";
+import { IoIosArrowBack } from "react-icons/io";
 
 import { createClient } from "@/utils/client";
 import { fetchComment } from "@/lib/features/commentSlice";
 import { AppDispatch } from "@/lib/store";
 import { Spinner } from "@radix-ui/themes";
+import Link from "next/link";
 
 const University = () => {
   const path = usePathname();
@@ -66,7 +68,16 @@ const University = () => {
         <div className="w-full flex items-center justify-center h-[32rem] text-[1.1rem]">
           <Spinner size="3" />
         </div>
-      ) : null}
+      ) : (
+        <div className="mb-2">
+          <Link href={"/"}>
+            <button className="flex gap-2 items-center hover:opacity-90 text-[1.1rem] font-medium mt-4">
+              <IoIosArrowBack />
+              Geri
+            </button>
+          </Link>
+        </div>
+      )}
       {focusUniversity && focusUniversity.length > 0
         ? focusUniversity.map((item: any) => (
             <div key={item.date_of_establishment} className="flex-col items-center justify-center mt-24">
