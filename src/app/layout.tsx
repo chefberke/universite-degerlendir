@@ -24,7 +24,9 @@ export default function RootLayout({
           <div className="flex items-center justify-center font-poppins">
             <div className="h-screen max-w-[70rem] w-[90%]">
               <div>
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense
+                  fallback={<div className="w-full h-full flex items-center justify-center">Yükleniyor...</div>}
+                >
                   <Navbar />
                 </Suspense>
               </div>
