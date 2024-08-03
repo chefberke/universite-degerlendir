@@ -14,6 +14,10 @@ import { createClient } from "@/utils/client";
 
 function Navbar() {
   const [theme, setTheme] = useState(false);
+  const [isUserLogin, isUserSetLogin] = useState(false);
+  const router = useRouter();
+  const params = useSearchParams();
+  const focusParams = params.getAll("login");
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -39,11 +43,6 @@ function Navbar() {
       localStorage.setItem("theme", "");
     }
   }
-
-  const [isUserLogin, isUserSetLogin] = useState(false);
-  const router = useRouter();
-  const params = useSearchParams();
-  const focusParams = params.getAll("login");
 
   async function userCheck() {
     const supabase = createClient();
