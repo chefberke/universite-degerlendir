@@ -14,8 +14,20 @@ import Yasarlogo from "../../../public/assets/yu_logo.png";
 import Thklogo from "../../../public/assets/thku_logo.png";
 import İtulogo from "../../../public/assets/tu_logo.png";
 
+interface University {
+  id: number;
+  name: string;
+  description: string;
+  date_of_establishment: string;
+  image: any;
+}
 
-const initialState = {
+interface UniversityState {
+  list: University[];
+  filteredlist: University[];
+}
+
+const initialState: UniversityState = {
   list: [
     {
       id: 1,
@@ -121,7 +133,8 @@ const initialState = {
       date_of_establishment: "2011",
       image: Thklogo,
     },
-  ]
+  ],
+  filteredlist: []
   
 }
 
@@ -129,11 +142,25 @@ export const universitySlice = createSlice({
   name: 'university',
   initialState,
   reducers: {
-   //
+    search: (state, action) => {
+      if (action.payload === "") {
+        state.filteredlist = state.list
+          return;
+      }
+  
+      const lowerText = action.payload.toLowerCase();
+      const matchUniversity = state.list.filter((university: any) => 
+          university.name.toLowerCase().includes(lowerText)
+      );
+  
+      state.filteredlist = matchUniversity
+    
+  }
+  
   },
 })
 
-export const {  } = universitySlice.actions
+export const { search } = universitySlice.actions
 
 
 export default universitySlice.reducer

@@ -27,7 +27,6 @@ const University = () => {
   const state = useSelector((item: any) => item.university.list);
 
   const dispatch = useDispatch<AppDispatch>();
-  const commentsState = useSelector((comment: any) => comment.comment);
 
   useEffect(() => {
     dispatch(fetchComment(pathId));

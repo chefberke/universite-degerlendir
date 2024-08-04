@@ -43,8 +43,17 @@ function Page() {
                 Uygulamamız herhangi bir üniversite ile resmi bir anlaşma yapmamaktadır. Dolayısıyla, üniversiteler
                 hakkında yorum ekleme, silme veya değiştirme yetkimiz bulunmamaktadır. Tüm yorumlar ve puanlamalar
                 kullanıcıların gerçek görüşlerini yansıtacak şekilde tamamen şeffaf bir şekilde yönetilmektedir. Site
-                geliştiricisi tarafından yapılan herhangi bir müdahale kesinlikle söz konusu değildir. Şeffaflık ve
-                tarafsızlık, uygulamamızın temel prensiplerindendir.
+                geliştiricisi tarafından yapılan herhangi bir müdahale kesinlikle söz konusu değildir
+              </p>
+            </div>
+            <div>
+              <h2 className="font-bold text-[1.3rem] dark:text-gray-200">İletişim:</h2>
+              <p className="text-gray-700 dark:text-gray-400 pt-1">
+                Gizlilik politikamız hakkında herhangi bir sorunuz veya endişeniz varsa, bizimle iletişime geçmekten
+                çekinmeyin:{" "}
+                <a href="mailto:berkekanber@gmail.com" className="text-blue-800 underline dark:text-blue-500">
+                  berkekanber@gmail.com
+                </a>{" "}
               </p>
             </div>
           </div>

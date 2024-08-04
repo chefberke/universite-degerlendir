@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import RateStar from "./RateStar";
@@ -27,7 +27,11 @@ const Universities = () => {
     router.push(`/university/${item.id}`);
   }
 
-  const List = useSelector((state: any) => state.university.list);
+  const FilteredList = useSelector((state: any) => state.university.filteredlist);
+
+  const displayedUniversities = useMemo(() => {
+    return FilteredList;
+  }, [FilteredList]);
 
   useEffect(() => {
     dispatch(fetchAllComment());
@@ -37,7 +41,12 @@ const Universities = () => {
 
   return (
     <div className="grid grid-cols-3 max-xl:grid-cols-2 max-sm:grid-cols-1 place-items-center dark:bg-slate-950">
-      {List.map((item: UniversityList) => {
+      {displayedUniversities.length === 0 ? (
+        <div className="w-full flex items-center justify-start mt-12 text-[1.1rem]">
+          <Spinner size="3" />
+        </div>
+      ) : null}
+      {displayedUniversities.map((item: UniversityList) => {
         const uniComment = Comments.allComments?.filter((comment: any) =>
           comment.university_id === item.id ? comment : null
         );
