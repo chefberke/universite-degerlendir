@@ -44,7 +44,11 @@ const Universities = () => {
   const loadMore = displayedUniversities.slice(0, universityPerPage);
 
   const handleLoadingMore = () => {
-    setUniversityPerPage(universityPerPage + 9);
+    if (loadMore < displayedUniversities) {
+      setUniversityPerPage(universityPerPage + 9);
+    } else {
+      return;
+    }
   };
 
   return (
@@ -110,7 +114,7 @@ const Universities = () => {
             <button className="text-white bg-blue-600 px-8 h-[2.2rem] rounded" onClick={handleLoadingMore}>
               Daha Fazla
             </button>
-            <p className="text-center pt-4 text-gray-500 dark:text-gray-200">{universityPerPage} Listeleniyor</p>
+            <p className="text-center pt-4 text-gray-500 dark:text-gray-200">{loadMore.length} Listeleniyor</p>
           </div>
         </div>
       )}
