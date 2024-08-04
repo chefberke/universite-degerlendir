@@ -36,7 +36,7 @@ export default function RootLayout({
               </div>
               <div>
                 <Theme className="dark:bg-slate-950">{children}</Theme>
-                {/* <Analytics /> */}
+                <Analytics />
               </div>
               <div>
                 <Footer />
