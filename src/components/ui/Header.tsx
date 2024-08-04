@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar";
 
 function Header() {
   return (
-    <div className="relative w-full h-[32rem] border border-white rounded-xl overflow-hidden">
+    <div className="relative w-full h-[32rem] border border-white dark:border-slate-950 rounded-xl overflow-hidden">
       <div className="relative w-full h-full">
         <Image src={kampus} fill style={{ objectFit: "cover" }} alt="kampus" className="absolute inset-0 z-0" />
       </div>

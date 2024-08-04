@@ -13,6 +13,11 @@ import İkyologo from "../../../public/assets/ikmyo_logo.png";
 import Yasarlogo from "../../../public/assets/yu_logo.png";
 import Thklogo from "../../../public/assets/thku_logo.png";
 import İtulogo from "../../../public/assets/tu_logo.png";
+import Ytulogo from "../../../public/assets/ytu_logo.png"
+import Acibademlogo from "../../../public/assets/acibadem_logo.png"
+import Bagulogo from "../../../public/assets/Baulogo.png"
+import Beykentlogo from "../../../public/assets/beykent_logo.png"
+import Birunilogo from "../../../public/assets/biruni_logo.png"
 
 interface University {
   id: number;
@@ -133,6 +138,46 @@ const initialState: UniversityState = {
       date_of_establishment: "2011",
       image: Thklogo,
     },
+    {
+      id: 14,
+      name: "Yıldız Teknik Üniversitesi",
+      description:
+        "1911 yılında kurulan Yıldız Teknik Üniversitesi, mühendislik ve mimarlık alanlarında güçlü bir eğitim sunar. Bilimsel araştırma ve teknoloji geliştirme konularında önde gelen bir kuruluştur.",
+      date_of_establishment: "1911",
+      image: Ytulogo
+    },
+    {
+      id: 15,
+      name: "Acıbadem Üniversitesi",
+      description:
+        "2009 yılında kurulan Acıbadem Üniversitesi, sağlık bilimleri, mühendislik ve sosyal bilimler alanlarında eğitim verir. Modern eğitim olanakları ve sağlık alanındaki güçlü altyapısıyla tanınır.",
+      date_of_establishment: "2007",
+      image: Acibademlogo
+    },
+    {
+      id: 16,
+      name: "Bahçeşehir Üniversitesi",
+      description:
+        "1998 yılında kurulan Bahçeşehir Üniversitesi, uluslararası standartlarda eğitim sunar ve özellikle işletme, mühendislik ve sosyal bilimler alanlarında güçlü bir akademik program sunar.",
+      date_of_establishment: "1998",
+      image: Bagulogo
+    },
+    {
+      id: 17,
+      name: "Beykent Üniversitesi",
+      description:
+        "1997 yılında kurulan Beykent Üniversitesi, çeşitli akademik disiplinlerde eğitim sunar ve öğrencilere modern bir eğitim ortamı sağlar. Özellikle iletişim, mühendislik ve sosyal bilimler alanlarında dikkat çeker.",
+      date_of_establishment: "1997",
+      image: Beykentlogo,
+    },
+    {
+      id: 18,
+      name: "Biruni Üniversitesi",
+      description:
+        "2014 yılında kurulan Biruni Üniversitesi, özellikle sağlık bilimleri ve mühendislik alanlarında eğitim sunar. Modern eğitim olanakları ve araştırma fırsatları ile öğrencilere geniş bir akademik yelpaze sağlar.",
+      date_of_establishment: "2014",
+      image: Birunilogo
+    }
   ],
   filteredlist: []
   
