@@ -18,6 +18,12 @@ import Acibademlogo from "../../../public/assets/acibadem_logo.png"
 import Bagulogo from "../../../public/assets/Baulogo.png"
 import Beykentlogo from "../../../public/assets/beykent_logo.png"
 import Birunilogo from "../../../public/assets/biruni_logo.png"
+import DogusUniversityLogo from "../../../public/assets/dogus_logo.png"
+import FenerbahceUniversityLogo from "../../../public/assets/fenerbahce_logo.png"
+import HalicUniversityLogo from "../../../public/assets/halic_logo.png"
+import IsikUniversityLogo from "../../../public/assets/isikuniversitesi_logo.png"
+import IbnHaldunUniversityLogo from "../../../public/assets/ibnhaldun_logo.png"
+
 
 interface University {
   id: number;
@@ -177,7 +183,52 @@ const initialState: UniversityState = {
         "2014 yılında kurulan Biruni Üniversitesi, özellikle sağlık bilimleri ve mühendislik alanlarında eğitim sunar. Modern eğitim olanakları ve araştırma fırsatları ile öğrencilere geniş bir akademik yelpaze sağlar.",
       date_of_establishment: "2014",
       image: Birunilogo
+    },
+    {
+      id: 19,
+      name: "Doğuş Üniversitesi",
+      description:
+        "1997 yılında kurulan Doğuş Üniversitesi, mühendislik, sosyal bilimler ve iş yönetimi alanlarında eğitim sunar. Yenilikçi eğitim yaklaşımları ve modern kampüsü ile tanınır.",
+      date_of_establishment: "1997",
+      image: DogusUniversityLogo,
+    },
+    {
+      id: 20,
+      name: "Fenerbahçe Üniversitesi",
+      description:
+        "2016 yılında kurulan Fenerbahçe Üniversitesi, özellikle spor bilimleri, işletme ve sosyal bilimler alanlarında eğitim verir. Üniversite, Fenerbahçe Spor Kulübü'nün akademik bir uzantısı olarak bilinir.",
+      date_of_establishment: "2016",
+      image: FenerbahceUniversityLogo,
+    },
+    {
+      id: 21,
+      name: "Haliç Üniversitesi",
+      description:
+        "1998 yılında kurulan Haliç Üniversitesi, mühendislik, sanat, sosyal bilimler ve sağlık bilimleri alanlarında eğitim verir. İstanbul'un merkezinde modern bir kampüse sahiptir ve çeşitli araştırma olanakları sunar.",
+      date_of_establishment: "1998",
+      image: HalicUniversityLogo,
+    },
+    {
+      id: 22,
+      name: "Işık Üniversitesi",
+      description:
+        "1996 yılında kurulan Işık Üniversitesi, mühendislik, sosyal bilimler ve sanat alanlarında eğitim sunar. Yüksek kaliteli akademik programları ve modern kampüsü ile tanınır.",
+      date_of_establishment: "1996",
+      image: IsikUniversityLogo,
+    },
+    {
+      id: 23,
+      name: "İbn Haldun Üniversitesi",
+      description:
+        "2015 yılında kurulan İbn Haldun Üniversitesi, sosyal bilimler ve beşeri bilimler alanlarında eğitim verir. Modern eğitim yöntemleri ve akademik araştırmalar ile dikkat çeker.",
+      date_of_establishment: "2015",
+      image: IbnHaldunUniversityLogo,
     }
+    
+    
+    
+    
+    
   ],
   filteredlist: []
   

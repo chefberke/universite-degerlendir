@@ -51,6 +51,8 @@ function Submit() {
   const rateLimitNotify = () => toast("Daha fazla yorum yapamazsınız!");
   const blockedWords = () => toast("Yorumunuz argo içeriyor!");
 
+  const [commentLimit, setCommentLimit] = useState(false);
+
   const dispatch = useDispatch<AppDispatch>();
 
   const focusComment = useSelector((item: any) => item.comment.data);
@@ -68,8 +70,9 @@ function Submit() {
       return;
     }
 
-    if (filter?.length === 3) {
+    if (filter?.length === 1) {
       rateLimitNotify();
+      setCommentLimit(true);
       setComment("");
       return;
     }
@@ -155,7 +158,7 @@ function Submit() {
               className={`bg-blue-600 text-white rounded px-6 h-[2rem] hover:opacity-95 ${
                 !isFormValid ? "opacity-50 cursor-not-allowed" : ""
               }`}
-              disabled={!isFormValid}
+              disabled={!isFormValid || commentLimit}
             >
               Paylaş
             </button>
