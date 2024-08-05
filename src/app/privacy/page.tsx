@@ -11,8 +11,8 @@ function Page() {
           </div>
           <div className="pt-6">
             <p className="text-[1rem] dark:text-gray-100 font-medium">
-              Izmir Üniversiteleri Puanlama uygulaması olarak gizliliğinize büyük önem veriyoruz. İşte bilgilerinizi
-              nasıl işlediğimiz:
+              Üniversiteleri Puanlama uygulaması olarak gizliliğinize büyük önem veriyoruz. İşte bilgilerinizi nasıl
+              işlediğimiz:
             </p>
           </div>
           <div className="pt-4 space-y-4">
