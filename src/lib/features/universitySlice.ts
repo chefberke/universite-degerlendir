@@ -23,6 +23,10 @@ import FenerbahceUniversityLogo from "../../../public/assets/fenerbahce_logo.png
 import HalicUniversityLogo from "../../../public/assets/halic_logo.png"
 import IsikUniversityLogo from "../../../public/assets/isikuniversitesi_logo.png"
 import IbnHaldunUniversityLogo from "../../../public/assets/ibnhaldun_logo.png"
+import Istanbul29MayisUniversityLogo from "../../../public/assets/29mayis_logo.png"
+import AltinbasUniversityLogo from "../../../public/assets/altinbas_logo.png"
+import ArelUniversityLogo from "../../../public/assets/arel_logo.png"
+import AtlasUniversityLogo from "../../../public/assets/atlas_logo.png"
 
 
 interface University {
@@ -223,12 +227,39 @@ const initialState: UniversityState = {
         "2015 yılında kurulan İbn Haldun Üniversitesi, sosyal bilimler ve beşeri bilimler alanlarında eğitim verir. Modern eğitim yöntemleri ve akademik araştırmalar ile dikkat çeker.",
       date_of_establishment: "2015",
       image: IbnHaldunUniversityLogo,
-    }
-    
-    
-    
-    
-    
+    },
+    {
+      id: 24,
+      name: "İstanbul 29 Mayıs Üniversitesi",
+      description:
+        "2010 yılında kurulan İstanbul 29 Mayıs Üniversitesi, sosyal bilimler, beşeri bilimler ve teoloji alanlarında eğitim verir. Modern eğitim yöntemleri ve akademik araştırmalara odaklanır.",
+      date_of_establishment: "2010",
+      image: Istanbul29MayisUniversityLogo,
+    },
+    {
+      id: 25,
+      name: "Altınbaş Üniversitesi",
+      description:
+        "2008 yılında kurulan Altınbaş Üniversitesi, mühendislik, hukuk, işletme ve sağlık bilimleri alanlarında eğitim verir. Yenilikçi eğitim anlayışı ve modern kampüsü ile tanınır.",
+      date_of_establishment: "2008",
+      image: AltinbasUniversityLogo,
+    },
+    {
+      id: 26,
+      name: "İstanbul Arel Üniversitesi",
+      description:
+        "2007 yılında kurulan İstanbul Arel Üniversitesi, mühendislik, işletme, sağlık bilimleri ve sosyal bilimler alanlarında eğitim sunar. Modern eğitim yaklaşımı ve geniş akademik programları ile bilinir.",
+      date_of_establishment: "2007",
+      image: ArelUniversityLogo,
+    },
+    {
+      id: 27,
+      name: "İstanbul Atlas Üniversitesi",
+      description:
+        "2018 yılında kurulan İstanbul Atlas Üniversitesi, sağlık bilimleri, mühendislik, sosyal bilimler ve sanat alanlarında eğitim sunar. Modern kampüsü ve yenilikçi eğitim anlayışı ile dikkat çeker.",
+      date_of_establishment: "2018",
+      image: AtlasUniversityLogo,
+    },
   ],
   filteredlist: []
   
