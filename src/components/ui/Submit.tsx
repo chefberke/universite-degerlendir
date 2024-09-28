@@ -21,7 +21,7 @@ function Submit() {
   const pathLastIndex = path.lastIndexOf("/");
   const pathId = path.slice(pathLastIndex + 1);
 
-  const [nowDate, setNowDate] = useState(new Date().toLocaleString());
+  const [nowDate, setNowDate] = useState(new Date().toString());
   const [comment, setComment] = useState("");
   const [selectedValue, setSelectedValue] = useState("5");
   const [userId, setUserId] = useState<String | null | undefined>();
@@ -56,7 +56,9 @@ function Submit() {
   const dispatch = useDispatch<AppDispatch>();
 
   const focusComment = useSelector((item: any) => item.comment.data);
-  const filter = focusComment?.filter((item: any) => (item.user_id === userId ? item : null));
+  const filter = focusComment?.filter((item: any) =>
+    item.user_id === userId ? item : null
+  );
 
   const filteredComment = new Filter();
   filteredComment.addWords(...turkishBlockedWordsList);
@@ -119,7 +121,11 @@ function Submit() {
             />
           </div>
           <div className="pt-4">
-            <Select.Root defaultValue={selectedValue} onValueChange={(value: any) => setSelectedValue(value)} required>
+            <Select.Root
+              defaultValue={selectedValue}
+              onValueChange={(value: any) => setSelectedValue(value)}
+              required
+            >
               <Select.Trigger />
               <Select.Content>
                 <Select.Group>
