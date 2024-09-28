@@ -22,6 +22,7 @@ function Submit() {
   const pathId = path.slice(pathLastIndex + 1);
 
   const [nowDate, setNowDate] = useState(new Date().toString());
+  console.log(nowDate);
   const [comment, setComment] = useState("");
   const [selectedValue, setSelectedValue] = useState("5");
   const [userId, setUserId] = useState<String | null | undefined>();
