@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
@@ -27,15 +27,19 @@ const University = () => {
   const state = useSelector((item: any) => item.university.list);
 
   const dispatch = useDispatch<AppDispatch>();
+  const router = useRouter();
 
   useEffect(() => {
     dispatch(fetchComment(pathId));
   }, []);
 
   useEffect(() => {
-    const universityUrl = state.filter((item: any) => (item.id.toString() === pathId.toString() ? item : null));
+    const universityUrl = state.filter((item: any) =>
+      item.id.toString() === pathId.toString() ? item : null
+    );
 
-    if (universityUrl === null) {
+    if (universityUrl === null || universityUrl.length == 0) {
+      router.push("/");
       return;
     }
 
@@ -79,18 +83,32 @@ const University = () => {
       )}
       {focusUniversity && focusUniversity.length > 0
         ? focusUniversity.map((item: any) => (
-            <div key={item.date_of_establishment} className="flex-col items-center justify-center mt-24">
+            <div
+              key={item.date_of_establishment}
+              className="flex-col items-center justify-center mt-24"
+            >
               <div>
-                <Image src={item.image} alt="universityImage" width={180} height={180} />
+                <Image
+                  src={item.image}
+                  alt="universityImage"
+                  width={180}
+                  height={180}
+                />
               </div>
               <div className="pt-12">
-                <h2 className="font-medium text-[1.6rem] dark:text-white">{item.name}</h2>
+                <h2 className="font-medium text-[1.6rem] dark:text-white">
+                  {item.name}
+                </h2>
               </div>
               <div className="pt-2">
-                <p className="text-gray-600 dark:text-gray-300">Kuruluş yılı: {item.date_of_establishment}</p>
+                <p className="text-gray-600 dark:text-gray-300">
+                  Kuruluş yılı: {item.date_of_establishment}
+                </p>
               </div>
               <div className="pt-4">
-                <p className="text-gray-600 font-normal dark:text-gray-200">{item.description}</p>
+                <p className="text-gray-600 font-normal dark:text-gray-200">
+                  {item.description}
+                </p>
               </div>
             </div>
           ))
@@ -101,7 +119,9 @@ const University = () => {
           {isUserLogin ? (
             <Submit />
           ) : (
-            <div className="text-[1.2rem] font-medium mt-16">Yorumunu hemen paylaşmak için giriş yap!</div>
+            <div className="text-[1.2rem] font-medium mt-16">
+              Yorumunu hemen paylaşmak için giriş yap!
+            </div>
           )}
         </div>
         <div className="dark:text-white mt-3 pt-12">
