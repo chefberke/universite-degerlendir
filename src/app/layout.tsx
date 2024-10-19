@@ -10,7 +10,8 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Üniversite Değerlendir",
-  description: "Bu platform, İzmirdeki üniversiteleri puanlamanıza ve anonim yorum bırakmanıza olanak tanır",
+  description:
+    "Bu platform, İzmirdeki üniversiteleri puanlamanıza ve anonim yorum bırakmanıza olanak tanır",
   icons: {
     icon: "/assets/logo.png",
   },
@@ -29,7 +30,11 @@ export default function RootLayout({
             <div className="h-screen max-w-[70rem] w-[90%]">
               <div>
                 <Suspense
-                  fallback={<div className="w-full h-full flex items-center justify-center">Yükleniyor...</div>}
+                  fallback={
+                    <div className="w-full h-full flex items-center justify-center">
+                      Yükleniyor...
+                    </div>
+                  }
                 >
                   <Navbar />
                 </Suspense>
